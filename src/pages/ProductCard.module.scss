@@ -1,0 +1,72 @@
+.productCard {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgb(219, 219, 219);
+  transition: 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px 10px rgb(219, 219, 219);
+    cursor: pointer;
+  }
+
+  img {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .price {
+    color: rgb(77, 77, 77);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    color: rgb(32, 32, 32);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+}
+
+button {
+  width: 130px;
+  height: 35px;
+  font-size: 18px;
+  border-radius: 12px;
+  background-color: rgb(88, 28, 88);
+  color: white;
+  border: none;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(61, 16, 61);
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+
+  .counter {
+    color: rgb(32, 32, 32);
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .plusminus {
+    margin: 0;
+    width: 35px;
+  }
+}

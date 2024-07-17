@@ -1,0 +1,35 @@
+.cardMangement {
+  display: flex;
+  align-items: center;
+
+  .search {
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgb(179, 179, 179) inset;
+    font-size: 18px;
+    color: rgb(78, 78, 78);
+  }
+
+  .sortBox {
+    margin-left: 10px;
+
+    .sort {
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: 500;
+      margin-left: 5px;
+    }
+
+    .activeSort {
+      color: rgb(201, 0, 0);
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: 500;
+      margin-left: 5px;
+    }
+  }
+}
