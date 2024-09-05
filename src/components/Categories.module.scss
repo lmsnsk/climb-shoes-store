@@ -3,12 +3,17 @@
   font-size: 18px;
   font-weight: 600;
   gap: 20px;
+}
 
-  div {
-    cursor: pointer;
+.dropItem {
+  cursor: pointer;
+  text-align: start;
+  padding: 5px;
+  border-radius: 3px;
 
-    &:hover {
-    }
+  &:hover {
+    background-color: gray;
+    color: blue;
   }
 }
 
@@ -23,16 +28,16 @@
 
   .dropList {
     position: absolute;
-    top: 30px;
+    top: 24px;
+    align-items: start;
+    text-wrap: nowrap;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: 1px solid gray;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    padding: 8px;
     cursor: pointer;
-
-    &:hover {
-    }
   }
 }
 

@@ -8,16 +8,20 @@ const categories = ["Все", "Скальные туфли", "Веревки", "
 
 const Categories: FC<CategoriesProps> = () => {
   const [iscategoriesOpened, setIscategoriesOpened] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState(0);
 
-  const categoriesToogler = () => {
-    setIscategoriesOpened(!iscategoriesOpened);
+  const handler = (index: number) => {
+    setIscategoriesOpened(false);
+    setCurrentCategory(index + 1);
   };
 
   const showCategories = () => {
     return (
       <>
         {categories.map((category, index) => (
-          <div key={index}>{category}</div>
+          <div className={style.dropItem} key={index} onClick={() => handler(index)}>
+            {category}
+          </div>
         ))}
       </>
     );
@@ -26,8 +30,8 @@ const Categories: FC<CategoriesProps> = () => {
   return (
     <>
       <div className={style.categoriesLine}>{showCategories()}</div>
-      <div className={style.categoriesSelect}>
-        <div className={style.dropTitle} onClick={categoriesToogler}>
+      <div className={style.categoriesSelect} onMouseLeave={() => setIscategoriesOpened(false)}>
+        <div className={style.dropTitle} onMouseEnter={() => setIscategoriesOpened(true)}>
           Категории
         </div>
         {iscategoriesOpened && <div className={style.dropList}>{showCategories()}</div>}
