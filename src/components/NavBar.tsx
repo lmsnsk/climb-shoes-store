@@ -10,6 +10,7 @@ import logo from "../assets/img/climbing-shoes64.png";
 import cartImg from "../assets/img/cart.svg";
 import logoutImg from "../assets/img/logout.svg";
 import ordersImg from "../assets/img/order.svg";
+import Categories from "./Categories";
 
 const NavBar: FC = () => {
   const { cartCounter, auth } = useAppSelector((state) => state.products);
@@ -33,6 +34,7 @@ const NavBar: FC = () => {
         <img className={style.logo} src={logo} alt="" />
         <h4>ClimbCity</h4>
       </Link>
+      <Categories />
       <div className={style.links}>
         {auth?.id ? (
           <>
@@ -42,9 +44,7 @@ const NavBar: FC = () => {
             <div className={style.cartLink}>
               <Link to="/cart">
                 <img className={style.icon} src={cartImg} alt="" />
-                {cartCounter ? (
-                  <div className={style.cartCounter}>{cartCounter}</div>
-                ) : null}
+                {cartCounter ? <div className={style.cartCounter}>{cartCounter}</div> : null}
               </Link>
             </div>
             <div className={style.logout} onClick={onLogoutHandler}>
@@ -53,8 +53,9 @@ const NavBar: FC = () => {
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+            <Link to="/login">Вход</Link>
+            <div className={style.divider}></div>
+            <Link to="/signup">Регистрация</Link>
           </>
         )}
       </div>

@@ -9,6 +9,7 @@ import Content from "./pages/Content";
 import { setAuth } from "./redux/productsSlice";
 import { getAuth } from "./utils/requests";
 import preloader from "./assets/img/preloader.gif";
+import Sale from "./components/Sale";
 
 function App() {
   const [isLoaded, seLoaded] = useState(false);
@@ -38,7 +39,10 @@ function App() {
 
   return (
     <div className={style.app}>
-      <NavBar />
+      <div className={style.header}>
+        <Sale />
+        <NavBar />
+      </div>
       <Content />
       {!isLoaded && (
         <div className={style.preloaderBox}>

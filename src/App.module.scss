@@ -3,6 +3,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 130px;
+
+  .header {
+    position: fixed;
+    top: 0;
+  }
 
   .preloaderBox {
     position: fixed;

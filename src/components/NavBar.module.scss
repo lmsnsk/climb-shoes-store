@@ -6,19 +6,31 @@
   gap: 40px;
   width: 100vw;
   max-width: 100%;
-  height: 60px;
-  background-color: rgb(88, 28, 88);
-  color: white;
+  height: 70px;
   font-size: 26px;
-  margin-bottom: 50px;
   padding: 0 30px;
   box-sizing: border-box;
+  // background-color: rgba(235, 235, 235, 0.9);
+  background-image: linear-gradient(
+    180deg,
+    rgba(212, 211, 223, 0.877) 0%,
+    rgba(255, 255, 255, 0.877) 50%,
+    rgba(212, 211, 223, 0.877) 100%
+  );
+  // border-bottom: 2px solid rgba(165, 128, 187, 0.3);
+  backdrop-filter: blur(10px);
 
   .links {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
     gap: 20px;
+    font-size: 20px;
+    font-weight: 600;
+
+    .divider {
+      width: 2px;
+      height: 30px;
+      background-color: rgba(165, 128, 187, 0.3);
+    }
 
     .logout {
       translate: 0 5px;
@@ -56,14 +68,27 @@
 
   a {
     text-decoration: none;
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
 
     h4 {
-      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-      font-style: italic;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+        sans-serif;
+      // color: rgb(88, 28, 88);
+      color: black;
+      font-weight: 700;
+      margin: 0;
     }
+
+    &:hover {
+      color: rgb(88, 28, 88);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  h4 {
+    display: none;
   }
 }

@@ -1,0 +1,46 @@
+.categoriesLine {
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
+  gap: 20px;
+
+  div {
+    cursor: pointer;
+
+    &:hover {
+    }
+  }
+}
+
+.categoriesSelect {
+  position: relative;
+  display: none;
+  font-size: 18px;
+  font-weight: 600;
+
+  .dropTitle {
+  }
+
+  .dropList {
+    position: absolute;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+    }
+  }
+}
+
+@media (max-width: 925px) {
+  .categoriesLine {
+    display: none;
+  }
+  .categoriesSelect {
+    display: flex;
+  }
+}
