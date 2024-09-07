@@ -3,7 +3,7 @@
   align-items: center;
 
   .search {
-    width: 400px;
+    width: clamp(90px, 30vw, 400px);
     height: 40px;
     border-radius: 20px;
     padding: 0 20px;

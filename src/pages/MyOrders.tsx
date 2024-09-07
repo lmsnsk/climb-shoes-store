@@ -33,6 +33,7 @@ const MyOrders: FC = () => {
                   id: 0,
                   title: "",
                   photo: "",
+                  vendor: "",
                   price: 100,
                 };
                 products.forEach((productElement) => {

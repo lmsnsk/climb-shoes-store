@@ -19,6 +19,7 @@ export type IProduct = {
   id: number;
   title: string;
   photo: string;
+  vendor: string;
   price: number;
 };
 

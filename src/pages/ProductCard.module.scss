@@ -1,7 +1,6 @@
 .productCard {
   width: 300px;
-  height: 300px;
-  margin-bottom: 20px;
+  height: 320px;
   border-radius: 15px;
   box-sizing: border-box;
   box-shadow: 0 0 5px rgb(219, 219, 219);
@@ -9,6 +8,7 @@
   &:hover {
     box-shadow: 0 0 15px 10px rgb(219, 219, 219);
     cursor: pointer;
+    scale: 1.05;
   }
 
   img {
@@ -21,14 +21,21 @@
     color: rgb(77, 77, 77);
     font-size: 22px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+  }
+
+  .vendor {
+    color: rgb(77, 77, 77);
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px;
   }
 
   .title {
     color: rgb(32, 32, 32);
     font-size: 20px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 }
 
@@ -41,6 +48,7 @@ button {
   color: white;
   border: none;
   transition: 0.2s;
+  margin-top: 20px;
 
   &:hover {
     cursor: pointer;

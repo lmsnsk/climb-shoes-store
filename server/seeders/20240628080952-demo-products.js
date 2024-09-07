@@ -15,6 +15,7 @@ module.exports = {
           vendorInfo: "https://www.scarpa.com",
           photo:
             "https://rockrun.com/cdn/shop/products/instinct-velcro-vs__41801_zoom_5000x.jpg?v=1534166085",
+          sizes: "37, 37.5, 38.5, 40, 41, 41.5, 43",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

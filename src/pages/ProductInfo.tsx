@@ -41,6 +41,7 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
                 id: product.id,
                 title: product.title,
                 photo: product.photo,
+                vendor: product.vendor,
                 price: product.price,
               }}
               title="Add to cart"

@@ -10,6 +10,7 @@ import { setAuth } from "./redux/productsSlice";
 import { getAuth } from "./utils/requests";
 import preloader from "./assets/img/preloader.gif";
 import Sale from "./components/Sale";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoaded, seLoaded] = useState(false);
@@ -49,6 +50,7 @@ function App() {
           <img src={preloader} alt="" className={style.preloader} />
         </div>
       )}
+      <Footer />
     </div>
   );
 }

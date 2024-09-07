@@ -28,7 +28,7 @@ class UserService {
   async getProducts() {
     try {
       let products = await Product.findAll({
-        attributes: ["title", "price", "id", "photo"],
+        attributes: ["title", "price", "id", "photo", "vendor"],
       });
       return products;
     } catch (error) {

@@ -53,6 +53,7 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
       >
         <img src={el.photo} alt="" />
         <div className={style.title}>{el.title}</div>
+        <div className={style.vendor}>{el.vendor}</div>
         <div className={style.price}>{el.price} &euro;</div>
       </div>
       {isCart ? (

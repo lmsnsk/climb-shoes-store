@@ -44,7 +44,13 @@ const Products: FC<IProductsProps> = ({ setProductId }) => {
           const cartServer: Array<ICartElementSever> = await response.json();
           const localCart: Array<ICartElement> = cartServer.map((el) => {
             cartCounter += el.count;
-            let prod: IProduct = { id: 0, photo: "", price: 0, title: "" };
+            let prod: IProduct = {
+              id: 0,
+              photo: "",
+              price: 0,
+              vendor: "",
+              title: "",
+            };
             products.forEach((el1) => {
               if (el1.id === el.productId) prod = el1;
             });
