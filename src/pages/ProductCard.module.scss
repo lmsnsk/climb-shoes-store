@@ -1,6 +1,8 @@
 .productCard {
   width: 300px;
   height: 320px;
+  margin-top: 20px;
+  padding-bottom: 10px;
   border-radius: 15px;
   box-sizing: border-box;
   box-shadow: 0 0 5px rgb(219, 219, 219);
@@ -76,5 +78,34 @@ button {
   .plusminus {
     margin: 0;
     width: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .productCard {
+    width: 150px;
+    height: 230px;
+    border-radius: 10px;
+
+    img {
+      margin-top: 6px;
+      width: 100px;
+      height: 100px;
+    }
+
+    .price {
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    .vendor {
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    .title {
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
   }
 }

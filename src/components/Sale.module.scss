@@ -8,6 +8,15 @@
   font-weight: 600;
 
   p {
+    font-size: 16px;
     margin: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sale {
+    p {
+      font-size: 14px;
+    }
   }
 }

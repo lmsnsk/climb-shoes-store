@@ -13,6 +13,8 @@ import {
   setProducts,
 } from "../redux/productsSlice";
 import { ICartElement, ICartElementSever, IProduct } from "../utils/types";
+import footerImg from "../assets/img/Filson_2022_SS3_AK_JKolsch_Day1_Hike_2146.webp";
+import { Carousel } from "../components/Carousel";
 
 interface IProductsProps {
   setProductId: (value: number) => void;
@@ -66,6 +68,7 @@ const Products: FC<IProductsProps> = ({ setProductId }) => {
 
   return (
     <div className={style.main}>
+      <Carousel />
       <ProductManager
         products={products}
         setLocalProduct={setLocalProduct}
@@ -77,6 +80,9 @@ const Products: FC<IProductsProps> = ({ setProductId }) => {
             <ProductCard el={el} isCart={false} setProductId={setProductId} />
           </Fragment>
         ))}
+      </div>
+      <div className={style.image}>
+        <img src={footerImg} alt="footer img" />
       </div>
     </div>
   );

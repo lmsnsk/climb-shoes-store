@@ -12,4 +12,33 @@
     gap: 30px;
     margin: 50px;
   }
+
+  .image {
+    position: relative;
+    width: 100vw;
+    height: clamp(30vh, 20vh, 15vh);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    img {
+      position: absolute;
+      width: 100%;
+      bottom: -10%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    .cardBox {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px;
+    }
+  }
 }
