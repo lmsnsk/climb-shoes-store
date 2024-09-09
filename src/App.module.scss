@@ -3,12 +3,16 @@
   text-align: center;
   padding-top: 100px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-sizing: border-box;
 
   .header {
     position: fixed;
     top: 0;
     z-index: 30;
+    box-shadow: 0 0 10px rgb(145, 145, 145);
   }
 
   .preloaderBox {

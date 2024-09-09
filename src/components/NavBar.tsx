@@ -6,7 +6,7 @@ import style from "./NavBar.module.scss";
 
 import { setAuth } from "../redux/productsSlice";
 import { logoutRequest } from "../utils/requests";
-import logo from "../assets/img/climbing-shoes64.png";
+import logo from "../assets/img/TG.png";
 import cartImg from "../assets/img/cart.svg";
 import logoutImg from "../assets/img/logout.svg";
 import ordersImg from "../assets/img/order.svg";
@@ -30,12 +30,18 @@ const NavBar: FC = () => {
 
   return (
     <header className={style.header}>
+      <div className={style.boxLeft}>
+        <div className={style.fill}></div>
+      </div>
       <Link to="/products">
         <img className={style.logo} src={logo} alt="" />
-        <h4>ClimbCity</h4>
       </Link>
-      <Categories />
-      <div className={style.links}>
+      <div className={style.navLinks}>
+        <Categories />
+        <div>About us</div>
+        <div>Contacts</div>
+      </div>
+      <div className={style.profileLinks}>
         {auth?.id ? (
           <>
             <Link to="/my-orders">
@@ -53,11 +59,14 @@ const NavBar: FC = () => {
           </>
         ) : (
           <>
-            <Link to="/login">Вход</Link>
+            <Link to="/login">Login</Link>
             <div className={style.divider}></div>
-            <Link to="/signup">Регистрация</Link>
+            <Link to="/signup">SignUp</Link>
           </>
         )}
+      </div>
+      <div className={style.boxRight}>
+        <div className={style.fillRight}></div>
       </div>
     </header>
   );

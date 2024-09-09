@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { SubmitHandler } from "react-hook-form";
 
 import style from "../components/SignForm.module.scss";
@@ -15,6 +15,11 @@ const Login: FC = () => {
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const id = setTimeout(() => setSuccess(null), 3000);
+    return () => clearTimeout(id);
+  });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
@@ -41,7 +46,9 @@ const Login: FC = () => {
         question={"Don't have an account?"}
         linkTitle={"Signup"}
       />
-      {!success && <div className={style.fail}>User not found</div>}
+      <div className={success === false ? `${style.fail} ${style.failActive}` : style.fail}>
+        User not found
+      </div>
     </>
   );
 };

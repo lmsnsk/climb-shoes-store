@@ -40,16 +40,18 @@ function App() {
 
   return (
     <div className={style.app}>
-      <div className={style.header}>
-        <Sale />
-        <NavBar />
-      </div>
-      <Content />
-      {!isLoaded && (
-        <div className={style.preloaderBox}>
-          <img src={preloader} alt="" className={style.preloader} />
+      <div>
+        <div className={style.header}>
+          <Sale />
+          <NavBar />
         </div>
-      )}
+        <Content />
+        {!isLoaded && (
+          <div className={style.preloaderBox}>
+            <img src={preloader} alt="" className={style.preloader} />
+          </div>
+        )}
+      </div>
       <Footer />
     </div>
   );

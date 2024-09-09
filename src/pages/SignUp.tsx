@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { SubmitHandler } from "react-hook-form";
 
@@ -12,6 +12,11 @@ import preloader from "../assets/img/preloader.gif";
 const SignUp: FC = () => {
   const [success, setSuccess] = useState<boolean | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const id = setTimeout(() => setSuccess(null), 3000);
+    return () => clearTimeout(id);
+  });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
@@ -46,9 +51,9 @@ const SignUp: FC = () => {
           </div>
         </>
       )}
-      {success === false && (
-        <div className={style.fail}>User already exists</div>
-      )}
+      <div className={success === false ? `${style.fail} ${style.failActive}` : style.fail}>
+        User already exists
+      </div>
     </>
   );
 };

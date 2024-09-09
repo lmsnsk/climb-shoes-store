@@ -1,34 +1,27 @@
-.categoriesLine {
-  display: flex;
-  font-size: 18px;
-  font-weight: 600;
-  gap: 20px;
-}
-
 .dropItem {
   cursor: pointer;
   text-align: start;
   padding: 5px;
   border-radius: 3px;
+  width: 93%;
+  transition: 0.2s;
 
   &:hover {
-    background-color: gray;
-    color: blue;
+    color: rgb(64, 64, 150);
+    background-color: rgb(241, 241, 241);
   }
 }
 
 .categoriesSelect {
   position: relative;
-  display: none;
-  font-size: 18px;
-  font-weight: 600;
-
-  .dropTitle {
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
   .dropList {
     position: absolute;
-    top: 24px;
+    top: 28px;
     align-items: start;
     text-wrap: nowrap;
     display: flex;
@@ -39,13 +32,24 @@
     padding: 8px;
     cursor: pointer;
   }
+
+  .dropArrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgb(54, 54, 54);
+    margin-left: 4px;
+    margin-top: 6px;
+  }
 }
 
 @media (max-width: 925px) {
-  .categoriesLine {
-    display: none;
-  }
   .categoriesSelect {
     display: flex;
+
+    .dropList {
+      top: 24px;
+    }
   }
 }

@@ -15,14 +15,7 @@ interface ISignFormProps {
   question: string;
 }
 
-const SignForm: FC<ISignFormProps> = ({
-  label,
-  onSubmit,
-  path,
-  btnTitle,
-  question,
-  linkTitle,
-}) => {
+const SignForm: FC<ISignFormProps> = ({ label, onSubmit, path, btnTitle, question, linkTitle }) => {
   const [isPassVisible, setPassVisible] = useState<boolean>(false);
   const {
     reset,

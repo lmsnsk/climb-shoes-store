@@ -5,7 +5,7 @@ import style from "./Sale.module.scss";
 const Sale: FC = () => {
   return (
     <div className={style.sale}>
-      <p>Скидки до 35%! Успевай заказать наше снаряжение</p>
+      <p>Discounts up to 35%! Hurry up to order our equipment</p>
     </div>
   );
 };

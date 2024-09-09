@@ -15,20 +15,21 @@ export const Carousel: FC<CarouselProps> = () => {
   const [currentImg, setCurrentImg] = useState(0);
   const intervalRef = useRef<NodeJS.Timer>();
 
-  useEffect(() => {
+  const startInterval = () => {
     intervalRef.current = setInterval(() => {
       setCurrentImg((prev) => (prev + 1) % imgArr.length);
-    }, 7000);
+    }, 10000);
+  };
+
+  useEffect(() => {
+    startInterval();
     return () => clearInterval(intervalRef.current);
   }, []);
 
   const tooglerHandler = (index: number) => {
     setCurrentImg(index);
-
     clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setCurrentImg((prev) => (prev + 1) % imgArr.length);
-    }, 7000);
+    startInterval();
   };
 
   return (
@@ -37,9 +38,7 @@ export const Carousel: FC<CarouselProps> = () => {
         <img
           key={index}
           src={imgArr[index]}
-          className={
-            index === currentImg ? `${style.img} ${style.ActiveImg}` : style.img
-          }
+          className={index === currentImg ? `${style.img} ${style.ActiveImg}` : style.img}
           alt="img"
         />
       ))}
@@ -47,9 +46,7 @@ export const Carousel: FC<CarouselProps> = () => {
         {imgArr.map((_, index) => (
           <div
             className={
-              index === currentImg
-                ? `${style.button} ${style.activeButton}`
-                : style.button
+              index === currentImg ? `${style.button} ${style.activeButton}` : style.button
             }
             key={index}
             onClick={() => tooglerHandler(index)}

@@ -17,7 +17,7 @@ const Footer: FC<FooterProps> = () => {
         <img src={instagram} alt="instagram" />
         <img src={telegram} alt="telegram" />
       </div>
-      <div>@2024 | ClimbCity | ALL RIGHTS RESERVED</div>
+      <div>@2024 | TopGeaR | ALL RIGHTS RESERVED</div>
     </footer>
   );
 };

@@ -4,14 +4,14 @@ import style from "./Categories.module.scss";
 
 interface CategoriesProps {}
 
-const categories = ["Все", "Скальные туфли", "Веревки", "Магнезия"];
+const categories = ["All", "Climbing shoes", "Ropes", "Chalk"];
 
 const Categories: FC<CategoriesProps> = () => {
-  const [iscategoriesOpened, setIscategoriesOpened] = useState(false);
+  const [isCategoriesOpened, setIsCategoriesOpened] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(0);
 
   const handler = (index: number) => {
-    setIscategoriesOpened(false);
+    setIsCategoriesOpened(false);
     setCurrentCategory(index + 1);
   };
 
@@ -29,12 +29,12 @@ const Categories: FC<CategoriesProps> = () => {
 
   return (
     <>
-      <div className={style.categoriesLine}>{showCategories()}</div>
-      <div className={style.categoriesSelect} onMouseLeave={() => setIscategoriesOpened(false)}>
-        <div className={style.dropTitle} onMouseEnter={() => setIscategoriesOpened(true)}>
-          Категории
+      <div className={style.categoriesSelect} onMouseLeave={() => setIsCategoriesOpened(false)}>
+        <div className={style.dropTitle} onMouseEnter={() => setIsCategoriesOpened(true)}>
+          Categories
         </div>
-        {iscategoriesOpened && <div className={style.dropList}>{showCategories()}</div>}
+        <div className={style.dropArrow}></div>
+        {isCategoriesOpened && <div className={style.dropList}>{showCategories()}</div>}
       </div>
     </>
   );
