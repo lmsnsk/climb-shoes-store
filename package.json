@@ -11,7 +11,14 @@
     "@types/node": "^16.18.101",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "nodemon": "^3.1.4",
+    "process": "^0.11.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
@@ -20,18 +27,11 @@
     "react-router-dom": "^6.24.1",
     "react-scripts": "5.0.1",
     "sass": "^1.77.6",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "express-session": "^1.18.0",
-    "nodemon": "^3.1.4",
-    "process": "^0.11.10",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "dbr": "cd server && npx sequelize db:migrate && npx sequelize db:seed:all",
@@ -57,5 +57,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
