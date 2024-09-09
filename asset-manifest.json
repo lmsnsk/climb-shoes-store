@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/lmsnsk/climb-shoes-store/static/css/main.2cf8dbb3.css",
+    "main.js": "/lmsnsk/climb-shoes-store/static/js/main.3cdf4fa5.js",
+    "static/media/2022-msr-hubbahubba-cascades-rinckenberger-9136.jpg": "/lmsnsk/climb-shoes-store/static/media/2022-msr-hubbahubba-cascades-rinckenberger-9136.d548888329ff41cd9cb9.jpg",
+    "static/media/SS24_KEEN_1001938_M_NewportH2_752_1.jpg": "/lmsnsk/climb-shoes-store/static/media/SS24_KEEN_1001938_M_NewportH2_752_1.88e5b916b0d236fec21a.jpg",
+    "static/media/Filson_2022_SS3_AK_JKolsch_Day1_Hike_2146.webp": "/lmsnsk/climb-shoes-store/static/media/Filson_2022_SS3_AK_JKolsch_Day1_Hike_2146.c3bf766e833f9384bca1.webp",
+    "static/media/2023-cascade-summer-backpack-switzerland-patitucci-7642_1.jpg": "/lmsnsk/climb-shoes-store/static/media/2023-cascade-summer-backpack-switzerland-patitucci-7642_1.a5b1608d189cb0c688a1.jpg",
+    "static/media/primus_stoves.jpg": "/lmsnsk/climb-shoes-store/static/media/primus_stoves.a86c4de545d4d4e85971.jpg",
+    "static/media/preloader.gif": "/lmsnsk/climb-shoes-store/static/media/preloader.79a7d6d7d80e5130f2d6.gif",
+    "static/media/TG.png": "/lmsnsk/climb-shoes-store/static/media/TG.5a5799a3e0c6f57e5060.png",
+    "static/media/cart.svg": "/lmsnsk/climb-shoes-store/static/media/cart.50f68913a7eca52e631ce126223afaef.svg",
+    "static/media/order.svg": "/lmsnsk/climb-shoes-store/static/media/order.a17b230f29079e1fcbf2f2b678691b5f.svg",
+    "static/media/logout.svg": "/lmsnsk/climb-shoes-store/static/media/logout.f13280338e94269f112071ad3b70c532.svg",
+    "index.html": "/lmsnsk/climb-shoes-store/index.html",
+    "main.2cf8dbb3.css.map": "/lmsnsk/climb-shoes-store/static/css/main.2cf8dbb3.css.map",
+    "main.3cdf4fa5.js.map": "/lmsnsk/climb-shoes-store/static/js/main.3cdf4fa5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2cf8dbb3.css",
+    "static/js/main.3cdf4fa5.js"
+  ]
+}
