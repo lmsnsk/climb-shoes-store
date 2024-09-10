@@ -30,6 +30,11 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
         <div className={style.title}>{product?.title}</div>
         <div className={style.price}>{product?.price} &euro;</div>
         <div className={style.description}>{product?.description}</div>
+        <div className={style.sizesBox}>
+          {product?.sizes?.split(",").map((el) => (
+            <div className={style.size}>{el.replace(".", ",")}</div>
+          ))}
+        </div>
         <div className={style.vendor}>{product?.vendor}</div>
         <a href={product?.vendorInfo} rel="noreferrer" target="_blank">
           <div className={style.vendorInfo}>{product?.vendorInfo}</div>

@@ -25,6 +25,34 @@
     width: 500px;
   }
 
+  .sizesBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 20px;
+
+    .size {
+      width: 52px;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 5px;
+      border: 2px solid rgb(53, 53, 53);
+      background-color: rgb(241, 241, 241);
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(207, 207, 207);
+      }
+    }
+
+    .activeize {
+      background-color: rgb(88, 28, 88);
+      border: none;
+      color: white;
+    }
+  }
+
   .vendor {
     margin-top: 30px;
     font-size: 20px;
