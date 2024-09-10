@@ -1,6 +1,8 @@
 import { FC, useState } from "react";
 
 import style from "./Categories.module.scss";
+import { useNavigate } from "react-router";
+import { setCurrentCategory } from "../redux/productsSlice";
 
 interface CategoriesProps {}
 
@@ -8,11 +10,13 @@ const categories = ["All", "Climbing shoes", "Ropes", "Chalk"];
 
 const Categories: FC<CategoriesProps> = () => {
   const [isCategoriesOpened, setIsCategoriesOpened] = useState(false);
-  const [currentCategory, setCurrentCategory] = useState(0);
+
+  const navigate = useNavigate();
 
   const handler = (index: number) => {
     setIsCategoriesOpened(false);
     setCurrentCategory(index + 1);
+    navigate("/products");
   };
 
   const showCategories = () => {

@@ -38,8 +38,12 @@ const NavBar: FC = () => {
       </Link>
       <div className={style.navLinks}>
         <Categories />
-        <div>About us</div>
-        <div>Contacts</div>
+        <Link to="/about-us">
+          <div>About us</div>
+        </Link>
+        <Link to="/contacts">
+          <div>Contacts</div>
+        </Link>
       </div>
       <div className={style.profileLinks}>
         {auth?.id ? (

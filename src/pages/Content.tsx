@@ -8,6 +8,8 @@ import SignUp from "./SignUp";
 import Products from "./Products";
 import ProductInfo from "./ProductInfo";
 import MyOrders from "./MyOrders";
+import AboutUs from "./AboutUs";
+import Contacts from "./Contacts";
 
 const Content: FC = () => {
   const [productId, setProductId] = useState(0);
@@ -24,18 +26,14 @@ const Content: FC = () => {
 
   return (
     <Routes>
-      <Route
-        path="/products"
-        element={<Products setProductId={setProductId} />}
-      />
-      <Route
-        path={`/products/:${productId}`}
-        element={<ProductInfo productId={productId} />}
-      />
+      <Route path="/products" element={<Products setProductId={setProductId} />} />
+      <Route path={`/products/:${productId}`} element={<ProductInfo productId={productId} />} />
       <Route path="/my-orders" element={<MyOrders />} />
       <Route path="/cart" element={<Cart setProductId={setProductId} />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/contacts" element={<Contacts />} />
+      <Route path="/about-us" element={<AboutUs />} />
     </Routes>
   );
 };

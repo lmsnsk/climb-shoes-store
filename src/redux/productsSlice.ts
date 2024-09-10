@@ -1,11 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {
-  AuthUser,
-  ICartElement,
-  IOrder,
-  IProduct,
-  IProductFull,
-} from "../utils/types";
+import { AuthUser, ICartElement, IOrder, IProduct, IProductFull } from "../utils/types";
 import { getData } from "../utils/requests";
 
 interface IInitialState {
@@ -15,16 +9,14 @@ interface IInitialState {
   cart: [] | Array<ICartElement>;
   orders: Array<IOrder>;
   cartCounter: number;
+  currentCategory: number;
 }
 
-export const fetchProducts = createAsyncThunk(
-  "products/fetchProducts",
-  async (_, { dispatch }) => {
-    const products = await getData("products");
-    dispatch(setProducts(products));
-    return products;
-  }
-);
+export const fetchProducts = createAsyncThunk("products/fetchProducts", async (_, { dispatch }) => {
+  const products = await getData("products");
+  dispatch(setProducts(products));
+  return products;
+});
 
 export const fetchProductById = createAsyncThunk(
   "products/fetchProductById",
@@ -42,6 +34,7 @@ const initialState: IInitialState = {
   cart: [],
   orders: [],
   cartCounter: 0,
+  currentCategory: 0,
 };
 
 const productsSlice = createSlice({
@@ -53,6 +46,9 @@ const productsSlice = createSlice({
     },
     setProducts(state, action: PayloadAction<Array<IProduct>>) {
       state.products = action.payload;
+    },
+    setCurrentCategory(state, action: PayloadAction<number>) {
+      state.currentCategory = action.payload;
     },
     setProduct(state, action: PayloadAction<IProductFull>) {
       state.product = action.payload;
@@ -93,6 +89,7 @@ export const {
   setOrder,
   setAllOrder,
   setProduct,
+  setCurrentCategory,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
