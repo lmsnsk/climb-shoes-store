@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      sizes: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       vendorInfo: {
         type: Sequelize.STRING,
         allowNull: false,

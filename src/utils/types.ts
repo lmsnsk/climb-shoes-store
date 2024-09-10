@@ -10,6 +10,7 @@ export type IProductFull = {
   photo: string;
   price: number;
   vendor: string;
+  sizes?: string;
   vendorInfo: string;
   createdAt: Date;
   updatedAt: Date;
