@@ -25,9 +25,18 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
     }
   }, [productId, dispatch]);
 
+  const photoArr = product ? product.photo.split(",") : [];
+
   return (
     <div className={style.main}>
-      <img src={product?.photo} alt="" />
+      <div className={style.imgBox}>
+        <img src={photoArr[0]} alt="" />
+        <div className={style.miniPhotos}>
+          {photoArr.map((el) => (
+            <img src={el} alt="" key={el} />
+          ))}
+        </div>
+      </div>
       <div>
         <div className={style.title}>{product?.title}</div>
         <div className={style.price}>{product?.price} &euro;</div>
@@ -37,7 +46,9 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
             <div
               key={el}
               className={
-                selectedSize === +el ? `${style.size} ${style.activeSize}` : `${style.size}`
+                selectedSize === +el
+                  ? `${style.size} ${style.activeSize}`
+                  : `${style.size}`
               }
               onClick={() => setSelectedSize(+el)}
             >

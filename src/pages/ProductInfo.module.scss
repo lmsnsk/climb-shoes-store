@@ -61,10 +61,31 @@
     font-weight: 500;
   }
 
-  img {
-    display: block;
+  .imgBox {
     width: 500px;
-    height: 500px;
+
+    & > img {
+      width: 100%;
+      display: block;
+      height: 500px;
+    }
+
+    .miniPhotos {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      gap: 5px;
+      justify-content: center;
+
+      & > img {
+        border: 1px solid gray;
+        border-radius: 5px;
+        width: 90px;
+        height: 90px;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+    }
   }
 
   .btnBox {
@@ -81,10 +102,24 @@
     gap: 10px;
     padding: 0 20px;
 
-    img {
-      width: 80%;
-      height: 80%;
+    .imgBox {
+      width: 90%;
+
+      img {
+        height: 100%;
+      }
+
+      .miniPhotos {
+        margin-top: 5px;
+        gap: 3px;
+
+        & > img {
+          width: 55px;
+          height: 55px;
+        }
+      }
     }
+
     .description {
       color: rgb(70, 70, 70);
       width: auto;
