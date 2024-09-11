@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 import style from "./ProductInfo.module.scss";
 
@@ -13,6 +13,8 @@ interface IProductInfo {
 const ProductInfo: FC<IProductInfo> = ({ productId }) => {
   const product = useAppSelector((state) => state.products.product);
   const checkRequest = useRef(false);
+
+  const [selectedSize, setSelectedSize] = useState<number | null>(null);
 
   const dispatch = useAppDispatch();
 
@@ -32,7 +34,15 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
         <div className={style.description}>{product?.description}</div>
         <div className={style.sizesBox}>
           {product?.sizes?.split(",").map((el) => (
-            <div className={style.size}>{el.replace(".", ",")}</div>
+            <div
+              key={el}
+              className={
+                selectedSize === +el ? `${style.size} ${style.activeSize}` : `${style.size}`
+              }
+              onClick={() => setSelectedSize(+el)}
+            >
+              {el.replace(".", ",")}
+            </div>
           ))}
         </div>
         <div className={style.vendor}>{product?.vendor}</div>
@@ -48,6 +58,8 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
                 photo: product.photo,
                 vendor: product.vendor,
                 price: product.price,
+                size: selectedSize,
+                isSizeNeed: product.sizes ? true : false,
               }}
               title="Add to cart"
             />

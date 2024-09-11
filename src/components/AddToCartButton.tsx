@@ -9,6 +9,7 @@ import { addToMyCart, updateMyCart } from "../utils/requests";
 interface IAddToCartButton {
   el: IProduct;
   title: string;
+  isSizeNeed?: boolean;
   style?: string;
 }
 
@@ -23,6 +24,8 @@ const AddToCartButton: FC<IAddToCartButton> = ({ el, title, style }) => {
       navigate("/login");
       return;
     }
+    if (el.isSizeNeed && !el.size) return;
+
     let cartCounter = 0;
     let isOneCount = false;
 
@@ -32,16 +35,13 @@ const AddToCartButton: FC<IAddToCartButton> = ({ el, title, style }) => {
       const newCart: Array<ICartElement> = cart.map((el) => {
         cartCounter += el.count;
         if (el.product.id === product.id) {
-          if (el.count === 1 && title === "-" && cartCounter !== cart.length)
-            isOneCount = true;
+          if (el.count === 1 && title === "-" && cartCounter !== cart.length) isOneCount = true;
           check = true;
-          count =
-            title !== "-" ? el.count + 1 : el.count > 1 ? el.count - 1 : 1;
+          count = title !== "-" ? el.count + 1 : el.count > 1 ? el.count - 1 : 1;
           return {
             product: el.product,
             owner: el.owner,
-            count:
-              title !== "-" ? el.count + 1 : el.count > 1 ? el.count - 1 : 1,
+            count: title !== "-" ? el.count + 1 : el.count > 1 ? el.count - 1 : 1,
           };
         }
         return el;

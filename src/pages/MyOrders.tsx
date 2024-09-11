@@ -27,22 +27,20 @@ const MyOrders: FC = () => {
         if (response?.ok) {
           const data: Array<IOrderServer> = await response.json();
           const ordersArr: Array<IOrder> = data.map((el) => {
-            const arr = JSON.parse(el.products).map(
-              (el1: { product: IProduct; count: number }) => {
-                let product: IProduct = {
-                  id: 0,
-                  title: "",
-                  photo: "",
-                  vendor: "",
-                  price: 100,
-                };
-                products.forEach((productElement) => {
-                  if (productElement.id === +el1.product.id)
-                    product = productElement;
-                });
-                return { product: product, count: el1.count };
-              }
-            );
+            const arr = JSON.parse(el.products).map((el1: { product: IProduct; count: number }) => {
+              let product: IProduct = {
+                id: 0,
+                title: "",
+                photo: "",
+                vendor: "",
+                price: 100,
+                size: null,
+              };
+              products.forEach((productElement) => {
+                if (productElement.id === +el1.product.id) product = productElement;
+              });
+              return { product: product, count: el1.count };
+            });
             return {
               totalPrice: el.totalPrice,
               id: el.id,
@@ -81,8 +79,7 @@ const MyOrders: FC = () => {
   const onClickDateSort = () => {
     const sortArr = orders.map((el) => ({ ...el }));
     sortArr.sort((a, b) => {
-      if (a.createdAt && b.createdAt)
-        return a.createdAt.localeCompare(b.createdAt);
+      if (a.createdAt && b.createdAt) return a.createdAt.localeCompare(b.createdAt);
       return a.totalPrice - b.totalPrice;
     });
     if (dateSortReversed) {
@@ -120,21 +117,15 @@ const MyOrders: FC = () => {
                     return (
                       <div key={index}>
                         <div className={style.title}>{el1.product.title}</div>
-                        <div className={style.price}>
-                          {el1.product.price} &euro;
-                        </div>
+                        <div className={style.price}>{el1.product.price} &euro;</div>
                         <div className={style.price}>count: {el1.count}</div>
                         <img src={el1.product.photo} alt="" />
                       </div>
                     );
                   })}
                 </div>
-                <div className={style.delivery}>
-                  Total price: {el.totalPrice} &euro;
-                </div>
-                <div className={style.delivery}>
-                  Delivery address: {el.address}
-                </div>
+                <div className={style.delivery}>Total price: {el.totalPrice} &euro;</div>
+                <div className={style.delivery}>Delivery address: {el.address}</div>
                 <div className={style.delivery}>Delivery date: {el.date}</div>
                 <div className={style.delivery}>Created: {el.createdAt}</div>
               </div>

@@ -18,10 +18,12 @@ export type IProductFull = {
 
 export type IProduct = {
   id: number;
+  size: number | null;
   title: string;
   photo: string;
   vendor: string;
   price: number;
+  isSizeNeed?: boolean;
 };
 
 export type AuthUser = {

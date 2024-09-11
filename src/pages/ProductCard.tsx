@@ -31,8 +31,7 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
       if (response?.ok) {
         let currentCount = 0;
         cart.forEach((el) => {
-          if (el.owner === auth.id && el.product.id === product.id)
-            currentCount = el.count;
+          if (el.owner === auth.id && el.product.id === product.id) currentCount = el.count;
         });
         dispatch(removeFromLocalCart(product.id));
         dispatch(setCartCounter(cartCounter - currentCount));
@@ -47,16 +46,13 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
 
   return (
     <div>
-      <div
-        className={style.productCard}
-        onClick={() => onProductInfoHandler(el.id)}
-      >
+      <div className={style.productCard} onClick={() => onProductInfoHandler(el.id)}>
         <img src={el.photo} alt="" />
         <div className={style.title}>{el.title}</div>
         <div className={style.vendor}>{el.vendor}</div>
         <div className={style.price}>{el.price} &euro;</div>
       </div>
-      {isCart ? (
+      {isCart && (
         <>
           <div className={style.buttons}>
             <AddToCartButton el={el} title="-" style={style.plusminus} />
@@ -65,8 +61,6 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
           </div>
           <button onClick={() => onClickRemoveProduct(el)}>Remove</button>
         </>
-      ) : (
-        <AddToCartButton el={el} title="Add to cart" />
       )}
     </div>
   );

@@ -6,12 +6,7 @@ import style from "./Products.module.scss";
 import ProductManager from "../components/ProductManager";
 import ProductCard from "./ProductCard";
 import { getMyCart } from "../utils/requests";
-import {
-  fetchProducts,
-  setCart,
-  setCartCounter,
-  setProducts,
-} from "../redux/productsSlice";
+import { fetchProducts, setCart, setCartCounter, setProducts } from "../redux/productsSlice";
 import { ICartElement, ICartElementSever, IProduct } from "../utils/types";
 import footerImg from "../assets/img/Filson_2022_SS3_AK_JKolsch_Day1_Hike_2146.webp";
 import { Carousel } from "../components/Carousel";
@@ -52,6 +47,7 @@ const Products: FC<IProductsProps> = ({ setProductId }) => {
               price: 0,
               vendor: "",
               title: "",
+              size: null,
             };
             products.forEach((el1) => {
               if (el1.id === el.productId) prod = el1;
