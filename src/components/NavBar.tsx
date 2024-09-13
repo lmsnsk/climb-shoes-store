@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { FC, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -28,15 +28,9 @@ const NavBar: FC = () => {
     }
   };
 
-  return (
-    <header className={style.header}>
-      <div className={style.boxLeft}>
-        <div className={style.fill}></div>
-      </div>
-      <Link to="/main">
-        <img className={style.logo} src={logo} alt="" />
-      </Link>
-      <div className={style.navLinks}>
+  const links = () => {
+    return (
+      <>
         <Link to="/main">
           <div>Main</div>
         </Link>
@@ -47,36 +41,53 @@ const NavBar: FC = () => {
         <Link to="/contacts">
           <div>Contacts</div>
         </Link>
-      </div>
-      <div className={style.profileLinks}>
-        {auth?.id ? (
-          <>
-            <Link to="/my-orders">
-              <img className={style.icon} src={ordersImg} alt="" />
-            </Link>
-            <div className={style.cartLink}>
-              <Link to="/cart">
-                <img className={style.icon} src={cartImg} alt="" />
-                {cartCounter ? <div className={style.cartCounter}>{cartCounter}</div> : null}
+      </>
+    );
+  };
+
+  return (
+    <>
+      <header className={style.header}>
+        <div className={style.boxLeft}>
+          <div className={style.fill}></div>
+        </div>
+        <Link to="/main">
+          <img className={style.logo} src={logo} alt="" />
+        </Link>
+        <div className={style.navLinks}>{links()}</div>
+        <div className={style.profileLinks}>
+          {auth?.id ? (
+            <>
+              <Link to="/my-orders">
+                <img className={style.icon} src={ordersImg} alt="" />
               </Link>
-            </div>
-            <div className={style.logout} onClick={onLogoutHandler}>
-              <img className={style.icon} src={logoutImg} alt="" />
-            </div>
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <div className={style.divider}></div>
-            <Link to="/signup">SignUp</Link>
-          </>
-        )}
+              <div className={style.cartLink}>
+                <Link to="/cart">
+                  <img className={style.icon} src={cartImg} alt="" />
+                  {cartCounter ? <div className={style.cartCounter}>{cartCounter}</div> : null}
+                </Link>
+              </div>
+              <div className={style.logout} onClick={onLogoutHandler}>
+                <img className={style.icon} src={logoutImg} alt="" />
+              </div>
+            </>
+          ) : (
+            <>
+              <Link to="/login">Login</Link>
+              <div className={style.divider}></div>
+              <Link to="/signup">SignUp</Link>
+            </>
+          )}
+        </div>
+        <div className={style.boxRight}>
+          <div className={style.fillRight}></div>
+        </div>
+      </header>
+      <div className={style.linkBox}>
+        <div className={style.mobileLinks}>{links()}</div>
       </div>
-      <div className={style.boxRight}>
-        <div className={style.fillRight}></div>
-      </div>
-    </header>
+    </>
   );
 };
 
-export default memo(NavBar);
+export default NavBar;

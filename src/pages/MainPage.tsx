@@ -3,10 +3,9 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 import style from "./MainPage.module.scss";
 
-import ProductManager from "../components/ProductManager";
 import ProductCard from "./ProductCard";
 import { getMyCart } from "../utils/requests";
-import { fetchProducts, setCart, setCartCounter, setProducts } from "../redux/productsSlice";
+import { fetchProducts, setCart, setCartCounter } from "../redux/productsSlice";
 import { ICartElement, ICartElementSever, IProduct } from "../utils/types";
 import footerImg from "../assets/img/Filson_2022_SS3_AK_JKolsch_Day1_Hike_2146.webp";
 import { Carousel } from "../components/Carousel";
@@ -16,7 +15,7 @@ interface IMainPage {
 }
 
 const MainPage: FC<IMainPage> = ({ setProductId }) => {
-  const products = useAppSelector((state) => state.products.products);
+  const { products, categories } = useAppSelector((state) => state.products);
   const auth = useAppSelector((state) => state.products.auth);
   const [localProduct, setLocalProduct] = useState(products);
 
@@ -26,10 +25,10 @@ const MainPage: FC<IMainPage> = ({ setProductId }) => {
   useEffect(() => {
     if (!checkRequestProducts.current) {
       dispatch(fetchProducts());
-      setLocalProduct(products);
       checkRequestProducts.current = true;
     }
-  }, [products]);
+    setLocalProduct(() => [...products]);
+  }, [products, dispatch]);
 
   useEffect(() => {
     const get = async () => {
@@ -63,21 +62,37 @@ const MainPage: FC<IMainPage> = ({ setProductId }) => {
     get();
   }, [auth, products, dispatch]);
 
+  const showCategoryBlock = (category: string) => {
+    let counter = 0;
+    return (
+      <>
+        {category !== "All" && (
+          <>
+            <div className={style.categoryTitle}>{category}</div>
+            <div className={style.cardBox}>
+              {localProduct.map((el) => {
+                if (category === el.category) counter++;
+                return (
+                  <Fragment key={-el.id}>
+                    {category === el.category && counter <= 4 && (
+                      <ProductCard el={el} isCart={false} setProductId={setProductId} />
+                    )}
+                  </Fragment>
+                );
+              })}
+            </div>
+          </>
+        )}
+      </>
+    );
+  };
+
   return (
     <div className={style.main}>
       <Carousel />
-      <ProductManager
-        products={products}
-        setLocalProduct={setLocalProduct}
-        setProducts={setProducts}
-      />
-      <div className={style.cardBox}>
-        {localProduct.map((el) => (
-          <Fragment key={-el.id}>
-            <ProductCard el={el} isCart={false} setProductId={setProductId} />
-          </Fragment>
-        ))}
-      </div>
+      {categories.map((category) => (
+        <Fragment key={category}>{showCategoryBlock(category)}</Fragment>
+      ))}
       <div className={style.image}>
         <img src={footerImg} alt="footer img" />
       </div>

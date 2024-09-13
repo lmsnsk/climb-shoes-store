@@ -11,6 +11,7 @@ interface IInitialState {
   cartCounter: number;
   currentCategory: string;
   categories: Array<string>;
+  isProductLoading: boolean;
 }
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async (_, { dispatch }) => {
@@ -22,8 +23,10 @@ export const fetchProducts = createAsyncThunk("products/fetchProducts", async (_
 export const fetchProductById = createAsyncThunk(
   "products/fetchProductById",
   async (productId: number, { dispatch }) => {
+    dispatch(setIsProductLoading(true));
     const product: IProductFull = await getData(`products/${productId}`);
     dispatch(setProduct(product));
+    dispatch(setIsProductLoading(false));
     return product;
   }
 );
@@ -37,6 +40,7 @@ const initialState: IInitialState = {
   cartCounter: 0,
   currentCategory: "All",
   categories: ["All", "Climbing shoes", "Boots", "Cooking"],
+  isProductLoading: false,
 };
 
 const productsSlice = createSlice({
@@ -48,6 +52,9 @@ const productsSlice = createSlice({
     },
     setProducts(state, action: PayloadAction<Array<IProduct>>) {
       state.products = action.payload;
+    },
+    setIsProductLoading(state, action: PayloadAction<boolean>) {
+      state.isProductLoading = action.payload;
     },
     setCurrentCategory(state, action: PayloadAction<string>) {
       state.currentCategory = action.payload;
@@ -92,6 +99,7 @@ export const {
   setAllOrder,
   setProduct,
   setCurrentCategory,
+  setIsProductLoading,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

@@ -6,7 +6,6 @@ import style from "./Products.module.scss";
 import ProductManager from "../components/ProductManager";
 import ProductCard from "./ProductCard";
 import { setProducts } from "../redux/productsSlice";
-import footerImg from "../assets/img/Filson_2022_SS3_AK_JKolsch_Day1_Hike_2146.webp";
 
 interface IProductsProps {
   setProductId: (value: number) => void;

@@ -15,7 +15,7 @@ const Categories: FC<CategoriesProps> = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const handler = (category: string) => {
+  const onCategoryClickHandler = (category: string) => {
     setIsCategoriesOpened(false);
     dispatch(setCurrentCategory(category));
     navigate("/products");
@@ -25,7 +25,11 @@ const Categories: FC<CategoriesProps> = () => {
     return (
       <>
         {categories.map((category, index) => (
-          <div className={style.dropItem} key={category + index} onClick={() => handler(category)}>
+          <div
+            className={style.dropItem}
+            key={category + index}
+            onClick={() => onCategoryClickHandler(category)}
+          >
             {category}
           </div>
         ))}

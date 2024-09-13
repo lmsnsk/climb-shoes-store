@@ -44,7 +44,7 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
 
   const onProductInfoHandler = (id: number) => {
     setProductId(id);
-    navigate(isCart ? `../products/${id.toString()}` : id.toString());
+    navigate(`../products/${id.toString()}`);
   };
 
   const onMouseEnterHandler = (e: MouseEvent) => {
