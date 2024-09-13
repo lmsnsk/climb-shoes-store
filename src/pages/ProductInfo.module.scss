@@ -78,12 +78,14 @@
       justify-content: center;
 
       & > img {
-        border: 1px solid gray;
-        border-radius: 5px;
         width: 90px;
         height: 90px;
-        box-sizing: border-box;
         cursor: pointer;
+      }
+
+      & > .chosenPhoto {
+        border-radius: 5px;
+        box-shadow: 0 0 3px gray;
       }
     }
   }

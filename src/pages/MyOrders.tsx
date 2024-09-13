@@ -35,6 +35,7 @@ const MyOrders: FC = () => {
                 vendor: "",
                 price: 100,
                 size: null,
+                category: "",
               };
               products.forEach((productElement) => {
                 if (productElement.id === +el1.product.id) product = productElement;

@@ -33,10 +33,13 @@ const NavBar: FC = () => {
       <div className={style.boxLeft}>
         <div className={style.fill}></div>
       </div>
-      <Link to="/products">
+      <Link to="/main">
         <img className={style.logo} src={logo} alt="" />
       </Link>
       <div className={style.navLinks}>
+        <Link to="/main">
+          <div>Main</div>
+        </Link>
         <Categories />
         <Link to="/about-us">
           <div>About us</div>

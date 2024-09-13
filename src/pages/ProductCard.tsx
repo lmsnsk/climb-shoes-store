@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, MouseEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
@@ -19,6 +19,9 @@ interface IProductCard {
 const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
   const { auth, cartCounter, cart } = useAppSelector((state) => state.products);
 
+  const [chosenPhoto, setChosenPhoto] = useState(0);
+  const imgRef = useRef<HTMLImageElement>(null);
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -31,8 +34,7 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
       if (response?.ok) {
         let currentCount = 0;
         cart.forEach((el) => {
-          if (el.owner === auth.id && el.product.id === product.id)
-            currentCount = el.count;
+          if (el.owner === auth.id && el.product.id === product.id) currentCount = el.count;
         });
         dispatch(removeFromLocalCart(product.id));
         dispatch(setCartCounter(cartCounter - currentCount));
@@ -45,13 +47,28 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
     navigate(isCart ? `../products/${id.toString()}` : id.toString());
   };
 
+  const onMouseEnterHandler = (e: MouseEvent) => {
+    const imgWidth = imgRef.current?.getBoundingClientRect().width;
+    const imgLeftSide = imgRef.current?.getBoundingClientRect().left;
+
+    if (!imgWidth || !imgLeftSide) return;
+
+    const imageCount = el.photo.split(",").length;
+    const number = imageCount - (imgWidth - (e.clientX - imgLeftSide)) / (imgWidth / imageCount);
+
+    if (number !== chosenPhoto) setChosenPhoto(Math.floor(number));
+  };
+
   return (
     <div>
-      <div
-        className={style.productCard}
-        onClick={() => onProductInfoHandler(el.id)}
-      >
-        <img src={el.photo.split(",")[0]} alt="" />
+      <div className={style.productCard} onClick={() => onProductInfoHandler(el.id)}>
+        <img
+          ref={imgRef}
+          src={el.photo.split(",")[chosenPhoto]}
+          alt=""
+          onMouseMove={(e) => onMouseEnterHandler(e)}
+          onMouseLeave={() => setChosenPhoto(0)}
+        />
         <div className={style.title}>{el.title}</div>
         <div className={style.vendor}>{el.vendor}</div>
         <div className={style.price}>{el.price} &euro;</div>

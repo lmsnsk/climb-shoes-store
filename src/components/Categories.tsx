@@ -3,19 +3,21 @@ import { FC, useState } from "react";
 import style from "./Categories.module.scss";
 import { useNavigate } from "react-router";
 import { setCurrentCategory } from "../redux/productsSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 interface CategoriesProps {}
 
-const categories = ["All", "Climbing shoes", "Ropes", "Chalk"];
-
 const Categories: FC<CategoriesProps> = () => {
+  const categories = useAppSelector((state) => state.products.categories);
+
   const [isCategoriesOpened, setIsCategoriesOpened] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const handler = (index: number) => {
+  const handler = (category: string) => {
     setIsCategoriesOpened(false);
-    setCurrentCategory(index + 1);
+    dispatch(setCurrentCategory(category));
     navigate("/products");
   };
 
@@ -23,7 +25,7 @@ const Categories: FC<CategoriesProps> = () => {
     return (
       <>
         {categories.map((category, index) => (
-          <div className={style.dropItem} key={index} onClick={() => handler(index)}>
+          <div className={style.dropItem} key={category + index} onClick={() => handler(category)}>
             {category}
           </div>
         ))}

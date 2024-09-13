@@ -9,7 +9,8 @@ interface IInitialState {
   cart: [] | Array<ICartElement>;
   orders: Array<IOrder>;
   cartCounter: number;
-  currentCategory: number;
+  currentCategory: string;
+  categories: Array<string>;
 }
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async (_, { dispatch }) => {
@@ -34,7 +35,8 @@ const initialState: IInitialState = {
   cart: [],
   orders: [],
   cartCounter: 0,
-  currentCategory: 0,
+  currentCategory: "All",
+  categories: ["All", "Climbing shoes", "Boots", "Cooking"],
 };
 
 const productsSlice = createSlice({
@@ -47,7 +49,7 @@ const productsSlice = createSlice({
     setProducts(state, action: PayloadAction<Array<IProduct>>) {
       state.products = action.payload;
     },
-    setCurrentCategory(state, action: PayloadAction<number>) {
+    setCurrentCategory(state, action: PayloadAction<string>) {
       state.currentCategory = action.payload;
     },
     setProduct(state, action: PayloadAction<IProductFull>) {

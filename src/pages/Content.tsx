@@ -10,6 +10,7 @@ import ProductInfo from "./ProductInfo";
 import MyOrders from "./MyOrders";
 import AboutUs from "./AboutUs";
 import Contacts from "./Contacts";
+import MainPage from "./MainPage";
 
 const Content: FC = () => {
   const [productId, setProductId] = useState(0);
@@ -26,6 +27,7 @@ const Content: FC = () => {
 
   return (
     <Routes>
+      <Route path="/main" element={<MainPage setProductId={setProductId} />} />
       <Route path="/products" element={<Products setProductId={setProductId} />} />
       <Route path={`/products/:${productId}`} element={<ProductInfo productId={productId} />} />
       <Route path="/my-orders" element={<MyOrders />} />

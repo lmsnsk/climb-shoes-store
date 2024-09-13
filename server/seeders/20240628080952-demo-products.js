@@ -9,14 +9,14 @@ module.exports = {
         {
           title: "Scarpa Instinct VS",
           description:
-            "By combining the best features of the Instinct Slipper and Lace shoes with some refinements, tweaks and improvements, the Scarpa Instinct VS is a serious contender as one of the best high-end performance climbing shoes available. As with the slipper version, the Instinct VS is entirely constructed from synthetic fabric. However, the more substantial (strapped) upper, stiff midsole and high coverage of rubber means the Scarpa Instinct VS does hold its size and shape considerably better than either of its namesakes",
+            "By combining the best features of the Instinct Slipper and Lace shoes with some refinements, tweaks and improvements, the Scarpa Instinct VS is a serious contender as one of the best high-end performance Climbing shoes available. As with the slipper version, the Instinct VS is entirely constructed from synthetic fabric. However, the more substantial (strapped) upper, stiff midsole and high coverage of rubber means the Scarpa Instinct VS does hold its size and shape considerably better than either of its namesakes",
           price: 165,
           vendor: "Scarpa",
           sizes: "36,36.5,38,39.5,40,41,42.5",
           vendorInfo: "https://www.scarpa.com",
           photo:
             "https://rockrun.com/cdn/shop/products/instinct-velcro-vs__41801_zoom_5000x.jpg?v=1534166085,https://rockrun.com/cdn/shop/products/70013-000-1_01_INS-VS_Blk_InstinctVS_Black_5000x.jpg?v=1628070893,https://rockrun.com/cdn/shop/products/70013-000-1_02_INS-VS_Blk_InstinctVS_Black_5000x.jpg?v=1628070892,https://rockrun.com/cdn/shop/products/70013-000-1_03_INS-VS_Blk_InstinctVS_Black_5000x.jpg?v=1628070893,https://rockrun.com/cdn/shop/products/70013-000-1_04_INS-VS_Blk_InstinctVS_Black_5000x.jpg?v=1628070893",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -30,7 +30,7 @@ module.exports = {
           vendorInfo: "https://www.scarpa.com",
           photo:
             "https://rockrun.com/cdn/shop/products/Untitleddesign_17_5000x.png?v=1671188881,https://rockrun.com/cdn/shop/products/70017-000-1_01_DRA_Yel_Drago_Yellow_600x.jpg?v=1671188881,https://rockrun.com/cdn/shop/products/70017-000-1_02_DRA_Yel_Drago_Yellow_5000x.jpg?v=1671188881,https://rockrun.com/cdn/shop/products/70017-000-1_03_DRA_Yel_Drago_Yellow_600x.jpg?v=1671188881,https://rockrun.com/cdn/shop/products/70017-000-1_04_DRA_Yel_Drago_Yellow_600x.jpg?v=1671188881",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -44,7 +44,7 @@ module.exports = {
           vendorInfo: "https://www.lasportiva.com",
           photo:
             "https://rockrun.com/cdn/shop/products/genius1_2048x.jpg?v=1533727512,https://rockrun.com/cdn/shop/products/genius3_5000x.jpg?v=1533727513,https://rockrun.com/cdn/shop/products/genius4_5000x.jpg?v=1533727513,https://rockrun.com/cdn/shop/products/genius2_5000x.jpg?v=1506882987",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -58,7 +58,7 @@ module.exports = {
           vendorInfo: "https://www.lasportiva.com",
           photo:
             "https://rockrun.com/cdn/shop/products/sportiva_skwama_5000x.jpg?v=1533734171,https://rockrun.com/cdn/shop/products/swama2_5000x.jpg?v=1533734172,https://rockrun.com/cdn/shop/products/swama_5000x.jpg?v=1533734172,https://rockrun.com/cdn/shop/products/swama3_5000x.jpg?v=1533734173",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -72,7 +72,7 @@ module.exports = {
           vendorInfo: "https://www.tenaya.net/",
           photo:
             "https://rockrun.com/cdn/shop/products/masai_5000x.jpg?v=1568836319,https://rockrun.com/cdn/shop/products/masi_2_5000x.jpg?v=1568836319,https://rockrun.com/cdn/shop/products/masi_3_5000x.jpg?v=1568836319,https://rockrun.com/cdn/shop/products/teneya_masai2_5000x.jpg?v=1568836319",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -86,7 +86,7 @@ module.exports = {
           vendorInfo: "https://www.tenaya.net/",
           photo:
             "https://rockrun.com/cdn/shop/products/tenaya-escalada-galeria-mastia-vista-lateral_5000x.jpg?v=1628850676,https://rockrun.com/cdn/shop/products/tenaya-escalada-galeria-mastia-vista-escorzo_600x.jpg?v=1628850676,https://rockrun.com/cdn/shop/products/tenaya-escalada-galeria-mastia-vista-superior2_5000x.jpg?v=1628850676,https://rockrun.com/cdn/shop/products/tenaya-escalada-galeria-mastia-vista-trasera_600x.jpg?v=1628850676,https://rockrun.com/cdn/shop/products/tenayamastaisole_5000x.jpg?v=1628850676",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -100,7 +100,7 @@ module.exports = {
           vendorInfo: "https://www.evolvsports.com",
           photo:
             "https://rockrun.com/cdn/shop/products/kronos2-p1_5000x.jpg?v=1569232888,https://rockrun.com/cdn/shop/products/kronos2-p2_5000x.jpg?v=1569232888,https://rockrun.com/cdn/shop/products/kronos2-p3_600x.jpg?v=1569232888,https://rockrun.com/cdn/shop/products/kronos2-p4_5000x.jpg?v=1569232888",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -114,7 +114,7 @@ module.exports = {
           vendorInfo: "https://www.borealoutdoor.com",
           photo:
             "https://rockrun.com/cdn/shop/products/boreal-ninja_5000x.jpg?v=1574074845,https://rockrun.com/cdn/shop/products/boreal-ninja-climbing-shoes-detail-2_600x.jpg?v=1574074846,https://rockrun.com/cdn/shop/products/boreal-ninja-climbing-shoes-detail-3_5000x.jpg?v=1574074846",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -128,7 +128,7 @@ module.exports = {
           vendorInfo: "https://www.lasportiva.com",
           photo:
             "https://rockrun.com/cdn/shop/products/la-sportiva-katana-climbing-shoe-main-image_2048x.jpg?v=1627549007,https://rockrun.com/cdn/shop/files/40J_100999_05_600x.jpg?v=1702030090,https://rockrun.com/cdn/shop/files/40J_100999_03_5000x.jpg?v=1702030090,https://rockrun.com/cdn/shop/files/40J_100999_04_5000x.jpg?v=1701967684,https://rockrun.com/cdn/shop/files/40J_100999_02_5000x.jpg?v=1701967684",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -142,7 +142,7 @@ module.exports = {
           vendorInfo: "https://www.lasportiva.com",
           photo:
             "https://rockrun.com/cdn/shop/products/solution-new2_5000x.jpg?v=1533735455,https://rockrun.com/cdn/shop/products/solution-new_5000x.jpg?v=1533735456,https://rockrun.com/cdn/shop/products/SOLUTION_5_600x.JPG?v=1533735456,https://rockrun.com/cdn/shop/products/SOLUTION4_5000x.JPG?v=1533735457",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -156,7 +156,7 @@ module.exports = {
           vendorInfo: "https://www.lasportiva.com",
           photo:
             "https://rockrun.com/cdn/shop/products/la-sportiva-otaki-climbing-shoes_5000x.jpg?v=1533733114,https://rockrun.com/cdn/shop/products/la-sportiva-otaki-climbing-shoes-detail-3_5000x.jpg?v=1533733114,https://rockrun.com/cdn/shop/products/la-sportiva-otaki-climbing-shoes-detail-4_600x.jpg?v=1533733115,https://rockrun.com/cdn/shop/products/la-sportiva-otaki-climbing-shoes-detail-2_600x.jpg?v=1533733115",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -170,7 +170,7 @@ module.exports = {
           vendorInfo: "https://www.lasportiva.com",
           photo:
             "https://rockrun.com/cdn/shop/products/solution-comp_5000x.jpg?v=1582205357,https://rockrun.com/cdn/shop/products/solution-comp-2_5000x.jpg?v=1582205357,https://rockrun.com/cdn/shop/products/la-sportiva-solution-comp_5000x.jpg?v=1582206423,https://rockrun.com/cdn/shop/products/20z_999100_solutioncomp_blackyellow_6_5000x.jpg?v=1582206441,https://rockrun.com/cdn/shop/products/solution-comp-1_600x.jpg?v=1582205357",
-          category: "climbing shoes",
+          category: "Climbing shoes",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -184,7 +184,7 @@ module.exports = {
           vendorInfo: "https://www.keenfootwear.com/",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/205/839/111950-01_XL1__71720.1692194655.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/205/847/111950-02_XL1__08767.1692194656.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/205/859/111950-04_XL1__93841.1692194658.JPG?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/205/839/111950-01_XL1__71720.1692194655.jpg?c=1",
-          category: "boots",
+          category: "Boots",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -198,7 +198,7 @@ module.exports = {
           vendorInfo: "https://www.keenfootwear.com/",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7437/19668/111964-01_XL1__43801.1725353353.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7437/22987/Keen_Nxis_Explorer_Mid_WP_Boot_Dark_Olive_Black__65993.1725353354.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7437/19672/111964-01_XL2__93226.1725353353.jpg?c=1",
-          category: "boots",
+          category: "Boots",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -212,7 +212,7 @@ module.exports = {
           vendorInfo: "https://www.hanwag.com/us/en-us",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/attribute_rule_images/8965_source_1695132540.jpg,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/160/588/111805-02_XL1__93146.1696521087.JPG?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/160/585/111805-01_XL2__88213.1696521087.jpg?c=1",
-          category: "boots",
+          category: "Boots",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -226,7 +226,7 @@ module.exports = {
           vendorInfo: "https://www.hanwag.com/us/en-us",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/155/560/111800-02_XL1__38599.1692194563.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/155/564/111800-03_XL1__36922.1696522209.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/155/561/111800-02_XL2__77693.1696522209.JPG?c=1",
-          category: "boots",
+          category: "Boots",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -240,7 +240,7 @@ module.exports = {
           vendorInfo: "https://hunterboots.co.uk/",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7518/20000/111977-01_XL2__53328.1699604117.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/640w/products/7518/19999/111977-01_XL1__02936.1699604107.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7518/20001/111977-01_XL3__05106.1699604119.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/640w/products/7518/20002/111977-01_XL4__94969.1699604120.jpg?c=1",
-          category: "boots",
+          category: "Boots",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -254,7 +254,7 @@ module.exports = {
           vendorInfo: "https://hunterboots.co.uk/",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7086/18743/111854-01_XL1__47034.1698186728.jpg?c=1",
-          category: "boots",
+          category: "Boots",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -268,7 +268,7 @@ module.exports = {
           vendorInfo: "https://www.msrgear.com/",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/attribute_rule_images/17839_source_1710323317.jpg,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/3571/21092/MSR_Pocketrocket_2_Ultralight_Stove_Being_Used__47952.1710323318.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/3571/21091/MSR_Pocketrocket_2_Ultralight_Stove_In_Hands__72333.1710323318.jpg?c=1",
-          category: "cooking",
+          category: "Cooking",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -282,7 +282,7 @@ module.exports = {
           vendorInfo: "https://primusequipment.com/",
           photo:
             "https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7340/21355/Primus_Essential_Trail_Kit__97399.1711110294.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7340/21357/Primus_Essential_Trail_Kit_Stove__19040.1711110295.jpg?c=1,https://cdn11.bigcommerce.com/s-ogga2as7h/images/stencil/1280x1280/products/7340/21358/Primus_Essential_Trail_Kit_Stove_Top_View__31191.1711110295.jpg?c=1",
-          category: "cooking",
+          category: "Cooking",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

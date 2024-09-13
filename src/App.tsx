@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     if (isLoaded) {
       if (auth) {
-        navigate("products");
+        navigate("main");
       } else {
         navigate("login");
       }
