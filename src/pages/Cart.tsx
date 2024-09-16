@@ -27,13 +27,8 @@ const Cart: FC<ICart> = ({ setProductId }) => {
     const cartArr = cart.map((el) => {
       sum += el.product.price * el.count;
       return (
-        <Fragment key={-el.product.id}>
-          <ProductCard
-            el={el.product}
-            isCart={true}
-            count={el.count}
-            setProductId={setProductId}
-          />
+        <Fragment key={el.product.size ? el.product.id + el.product.size : el.product.id}>
+          <ProductCard el={el.product} isCart={true} count={el.count} setProductId={setProductId} />
         </Fragment>
       );
     });
@@ -84,10 +79,7 @@ const Cart: FC<ICart> = ({ setProductId }) => {
           <div className={style.cardBox}>{showCart()}</div>
           <div className={style.btnBox}>
             Total: {sum} &euro;
-            <button
-              className={style.createOrderBtn}
-              onClick={() => setCreateOrder(true)}
-            >
+            <button className={style.createOrderBtn} onClick={() => setCreateOrder(true)}>
               Checkout
             </button>
           </div>

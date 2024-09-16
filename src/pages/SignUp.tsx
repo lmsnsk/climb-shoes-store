@@ -35,7 +35,7 @@ const SignUp: FC = () => {
   return (
     <>
       <SignForm
-        label={"Signup"}
+        label={"SignUp"}
         onSubmit={onSubmit}
         path={"/login"}
         btnTitle={"SIGN UP"}
@@ -46,7 +46,7 @@ const SignUp: FC = () => {
         <>
           <div className={style.fill}></div>
           <div className={style.success}>
-            Registration comleted successfully!
+            Registration completed successfully!
             <img src={preloader} alt="" className={style.preloader} />
           </div>
         </>

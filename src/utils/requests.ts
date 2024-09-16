@@ -28,7 +28,7 @@ export const getMyCart = async (pathname: string) => {
 
 export const updateMyCart = async (
   pathname: string,
-  sendData: { id: number; count: number; owner: number }
+  sendData: { id: number; size: number | null; count: number; owner: number }
 ) => {
   try {
     const response = await fetch(APIPATH + pathname, {
@@ -42,10 +42,7 @@ export const updateMyCart = async (
   }
 };
 
-export const addToMyCart = async (
-  pathname: string,
-  sendData: ICartElementSever
-) => {
+export const addToMyCart = async (pathname: string, sendData: ICartElementSever) => {
   try {
     const response = await fetch(APIPATH + pathname, {
       ...OPTIONS,
@@ -58,10 +55,7 @@ export const addToMyCart = async (
   }
 };
 
-export const removeFromCart = async (
-  pathname: string,
-  sendData: { id: number; owner: number }
-) => {
+export const removeFromCart = async (pathname: string, sendData: { id: number; owner: number }) => {
   try {
     const response = await fetch(APIPATH + pathname, {
       ...OPTIONS,
@@ -110,10 +104,7 @@ export const getOrders = async (pathname: string) => {
   }
 };
 
-export const createOrderRequest = async (
-  pathname: string,
-  sendData: IOrderServer
-) => {
+export const createOrderRequest = async (pathname: string, sendData: IOrderServer) => {
   try {
     const response = await fetch(APIPATH + pathname, {
       ...OPTIONS,

@@ -9,6 +9,9 @@
   background-color: white;
   box-shadow: 0 0 10px black;
   top: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   position: fixed;
   color: green;
   font-size: 22px;
@@ -166,6 +169,10 @@
 }
 
 @media (max-width: 768px) {
+  .success {
+    width: 350px;
+  }
+
   .form {
     width: 280px;
 

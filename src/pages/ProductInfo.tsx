@@ -64,7 +64,7 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
               <img
                 className={index === chosenPhoto ? style.chosenPhoto : ""}
                 src={el}
-                alt="product-mimiphoto"
+                alt="product-miniphoto"
                 key={el}
                 onClick={() => setChosenPhoto(index)}
               />
@@ -93,7 +93,7 @@ const ProductInfo: FC<IProductInfo> = ({ productId }) => {
                   size: selectedSize,
                   isSizeNeed: product.sizes ? true : false,
                 }}
-                title="Add to cart"
+                btnTitle="Add to cart"
               />
             )}
           </div>

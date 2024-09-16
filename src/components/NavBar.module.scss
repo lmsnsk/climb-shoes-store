@@ -151,6 +151,7 @@
 @media (max-width: 820px) {
   .header {
     padding: 0 5px;
+    height: 80px;
 
     .navLinks {
       display: none;
@@ -164,21 +165,21 @@
 
     .boxLeft {
       height: 80px;
-      left: -20px;
+      left: -10px;
       width: 150px;
     }
 
     .boxRight {
       height: 80px;
-      right: -30px;
-      width: 200px;
+      right: -20px;
+      width: 220px;
     }
 
     .fill {
-      left: 0px;
+      left: -15px;
       top: -30px;
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 125px;
     }
 
     .fillRight {

@@ -8,12 +8,12 @@ import { addToMyCart, updateMyCart } from "../utils/requests";
 
 interface IAddToCartButton {
   el: IProduct;
-  title: string;
+  btnTitle: string;
   isSizeNeed?: boolean;
   style?: string;
 }
 
-const AddToCartButton: FC<IAddToCartButton> = ({ el, title, style }) => {
+const AddToCartButton: FC<IAddToCartButton> = ({ el, btnTitle, style }) => {
   const { cart, auth } = useAppSelector((state) => state.products);
 
   const navigate = useNavigate();
@@ -32,40 +32,43 @@ const AddToCartButton: FC<IAddToCartButton> = ({ el, title, style }) => {
     if (cart.length) {
       let count = 1;
       let check = false;
-      const newCart: Array<ICartElement> = cart.map((el) => {
-        cartCounter += el.count;
-        if (el.product.id === product.id) {
-          if (el.count === 1 && title === "-" && cartCounter !== cart.length) isOneCount = true;
+      const newCart: Array<ICartElement> = cart.map((cartEl) => {
+        cartCounter += cartEl.count;
+        if (cartEl.product.id === product.id && cartEl.product.size === product.size) {
+          if (cartEl.count === 1 && btnTitle === "-" && cartCounter !== cart.length) {
+            isOneCount = true;
+          }
           check = true;
-          count = title !== "-" ? el.count + 1 : el.count > 1 ? el.count - 1 : 1;
+          count = btnTitle !== "-" ? cartEl.count + 1 : cartEl.count > 1 ? cartEl.count - 1 : 1;
           return {
-            product: el.product,
-            owner: el.owner,
-            count: title !== "-" ? el.count + 1 : el.count > 1 ? el.count - 1 : 1,
+            product: cartEl.product,
+            owner: cartEl.owner,
+            count: btnTitle !== "-" ? cartEl.count + 1 : cartEl.count > 1 ? cartEl.count - 1 : 1,
           };
         }
-        return el;
+        return cartEl;
       });
       if (check) {
         dispatch(setCart(newCart));
-        updateMyCart("cart", { id: product.id, count: count, owner: auth.id });
+        updateMyCart("cart", { id: product.id, size: product.size, count: count, owner: auth.id });
       } else {
         newCart.push({ product: product, owner: auth.id, count: 1 });
         dispatch(setCart(newCart));
         addToMyCart("cart", {
           productId: product.id,
+          size: product.size,
           owner: auth.id,
           count: 1,
         });
       }
     } else {
       dispatch(setCart([{ product: product, owner: auth.id, count: 1 }]));
-      addToMyCart("cart", { productId: product.id, owner: auth.id, count: 1 });
+      addToMyCart("cart", { productId: product.id, size: product.size, owner: auth.id, count: 1 });
     }
     if (!isOneCount) {
       dispatch(
         setCartCounter(
-          title !== "-"
+          btnTitle !== "-"
             ? cartCounter + 1
             : cartCounter > cart.length
             ? cartCounter - 1
@@ -77,7 +80,7 @@ const AddToCartButton: FC<IAddToCartButton> = ({ el, title, style }) => {
 
   return (
     <button className={style} onClick={() => onClickAddToCartHandler(el)}>
-      {title}
+      {btnTitle}
     </button>
   );
 };

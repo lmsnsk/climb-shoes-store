@@ -13,6 +13,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      size: {
+        type: Sequelize.INTEGER,
+      },
       productId: {
         type: Sequelize.INTEGER,
         allowNull: false,

@@ -12,7 +12,7 @@ class UserService {
       return await User.create({ username, password });
     } catch (error) {
       console.log(error);
-      new Error(`User creation failed: ${error}`);
+      throw new Error(`User creation failed: ${error}`);
     }
   }
 
@@ -59,21 +59,21 @@ class UserService {
       return await Cart.create({ owner, productId, count });
     } catch (error) {
       console.log(error);
-      new Error(`User creation failed: ${error}`);
+      throw new Error(`User creation failed: ${error}`);
     }
   }
 
-  async updateCartElement({ id, count, owner }) {
+  async updateCartElement({ id, count, owner, size }) {
     try {
       const cartElement = await Cart.findOne({
-        where: { productId: id, owner: owner },
+        where: { productId: id, owner: owner, size: size },
       });
       cartElement.count = count;
       cartElement.save();
-      return { count: count, id: id, owner: owner };
+      return { count: count, id: id, owner: owner, size: size };
     } catch (error) {
       console.log(error);
-      new Error(`Update failed: ${error}`);
+      throw new Error(`Update failed: ${error}`);
     }
   }
 
@@ -114,7 +114,7 @@ class UserService {
       });
     } catch (error) {
       console.log(error);
-      new Error(`Order creation failed: ${error}`);
+      throw new Error(`Order creation failed: ${error}`);
     }
   }
 

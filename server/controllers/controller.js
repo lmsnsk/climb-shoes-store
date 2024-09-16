@@ -11,9 +11,7 @@ module.exports = {
       const user = await userService.create(req.body);
       res.status(201).send(user);
     } catch (error) {
-      res
-        .status(400)
-        .send({ error: `Failed to create user with cause: ${error}` });
+      res.status(400).send({ error: `Failed to create user with cause: ${error}` });
     }
   },
 
@@ -94,12 +92,12 @@ module.exports = {
 
   async addToCart(req, res) {
     try {
+      console.log(req.body);
+
       const element = await userService.createCartElement(req.body);
       res.status(201).send(element);
     } catch (error) {
-      res
-        .status(400)
-        .send({ error: `Failed to create cart element with cause: ${error}` });
+      res.status(400).send({ error: `Failed to create cart element with cause: ${error}` });
     }
   },
 
@@ -147,9 +145,7 @@ module.exports = {
       const element = await userService.createOrder(req.body);
       res.status(201).send(element);
     } catch (error) {
-      res
-        .status(400)
-        .send({ error: `Failed to create order with cause: ${error}` });
+      res.status(400).send({ error: `Failed to create order with cause: ${error}` });
     }
   },
 

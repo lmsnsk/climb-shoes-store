@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       productId: DataTypes.INTEGER,
       owner: DataTypes.INTEGER,
       count: DataTypes.INTEGER,
+      size: DataTypes.INTEGER,
     },
     {
       sequelize,

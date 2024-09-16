@@ -8,7 +8,7 @@ module.exports = {
       [
         {
           products:
-            '[{"product": {"price":130, "title":"scarpa", "photo":"", "vendor": "", "vendorInfo":""}," count": 2}]',
+            '[{"product": {"price":130, "size":42, "title":"scarpa", "photo":"", "vendor": "", "vendorInfo":""}," count": 2}]',
           totalPrice: 1000,
           status: true,
           owner: 2,

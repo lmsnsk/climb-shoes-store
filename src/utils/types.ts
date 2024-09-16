@@ -41,6 +41,7 @@ export interface ICartElement {
 
 export interface ICartElementSever {
   productId: number;
+  size: number | null;
   count: number;
   owner: number;
 }

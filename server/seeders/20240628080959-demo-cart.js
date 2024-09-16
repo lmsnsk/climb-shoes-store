@@ -9,6 +9,7 @@ module.exports = {
         {
           owner: 5,
           productId: 2,
+          size: 42,
           count: 1,
           createdAt: new Date(),
           updatedAt: new Date(),

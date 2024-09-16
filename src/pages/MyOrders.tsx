@@ -26,31 +26,34 @@ const MyOrders: FC = () => {
 
         if (response?.ok) {
           const data: Array<IOrderServer> = await response.json();
-          const ordersArr: Array<IOrder> = data.map((el) => {
-            const arr = JSON.parse(el.products).map((el1: { product: IProduct; count: number }) => {
-              let product: IProduct = {
-                id: 0,
-                title: "",
-                photo: "",
-                vendor: "",
-                price: 100,
-                size: null,
-                category: "",
-              };
-              products.forEach((productElement) => {
-                if (productElement.id === +el1.product.id) product = productElement;
-              });
-              return { product: product, count: el1.count };
-            });
+
+          const ordersArr: Array<IOrder> = data.map((order) => {
+            const arr = JSON.parse(order.products).map(
+              (el: { product: IProduct; count: number }) => {
+                let product: IProduct = {
+                  id: 0,
+                  title: "",
+                  photo: "",
+                  vendor: "",
+                  price: 100,
+                  size: null,
+                  category: "",
+                };
+                products.forEach((productElement) => {
+                  if (productElement.id === +el.product.id) product = productElement;
+                });
+                return { product: { ...product, size: el.product.size }, count: el.count };
+              }
+            );
             return {
-              totalPrice: el.totalPrice,
-              id: el.id,
-              owner: el.owner,
-              address: el.address,
-              date: el.date,
-              status: el.status,
+              totalPrice: order.totalPrice,
+              id: order.id,
+              owner: order.owner,
+              address: order.address,
+              date: order.date,
+              status: order.status,
               products: arr,
-              createdAt: formatDate(el.createdAt),
+              createdAt: formatDate(order.createdAt),
             };
           });
           dispatch(setAllOrder(ordersArr));
@@ -119,16 +122,27 @@ const MyOrders: FC = () => {
                       <div key={index}>
                         <div className={style.title}>{el1.product.title}</div>
                         <div className={style.price}>{el1.product.price} &euro;</div>
+                        <div className={style.price}>size: {el1.product.size}</div>
                         <div className={style.price}>count: {el1.count}</div>
                         <img src={el1.product.photo} alt="" />
                       </div>
                     );
                   })}
                 </div>
-                <div className={style.delivery}>Total price: {el.totalPrice} &euro;</div>
-                <div className={style.delivery}>Delivery address: {el.address}</div>
-                <div className={style.delivery}>Delivery date: {el.date}</div>
-                <div className={style.delivery}>Created: {el.createdAt}</div>
+                <div className={style.deliveryBox}>
+                  <div className={style.delivery}>
+                    Total price: <strong>{el.totalPrice} &euro;</strong>
+                  </div>
+                  <div className={style.delivery}>
+                    Delivery address: <strong>{el.address}</strong>
+                  </div>
+                  <div className={style.delivery}>
+                    Delivery date: <strong>{el.date}</strong>
+                  </div>
+                  <div className={style.delivery}>
+                    Created: <strong>{el.createdAt}</strong>
+                  </div>
+                </div>
               </div>
             );
           })}

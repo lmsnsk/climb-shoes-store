@@ -72,13 +72,14 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
         <div className={style.title}>{el.title}</div>
         <div className={style.vendor}>{el.vendor}</div>
         <div className={style.price}>{el.price} &euro;</div>
+        {el.size && <div className={style.size}>Size: {el.size}</div>}
       </div>
       {isCart && (
         <>
           <div className={style.buttons}>
-            <AddToCartButton el={el} title="-" style={style.plusminus} />
+            <AddToCartButton el={el} btnTitle="-" style={style.plusminus} />
             <div className={style.counter}>{count}</div>
-            <AddToCartButton el={el} title="+" style={style.plusminus} />
+            <AddToCartButton el={el} btnTitle="+" style={style.plusminus} />
           </div>
           <button onClick={() => onClickRemoveProduct(el)}>Remove</button>
         </>

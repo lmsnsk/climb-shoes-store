@@ -58,13 +58,13 @@
       &:hover {
         background-color: rgb(88, 28, 88);
         color: white;
-        border: none;
+        border: 2px solid rgb(88, 28, 88);
       }
     }
 
     .activeSize {
       background-color: rgb(88, 28, 88);
-      border: none;
+      background-color: rgb(88, 28, 88);
       color: white;
     }
   }
@@ -95,10 +95,10 @@
         width: 90px;
         height: 90px;
         cursor: pointer;
+        border-radius: 5px;
       }
 
       & > .chosenPhoto {
-        border-radius: 5px;
         box-shadow: 0 0 3px gray;
       }
     }
