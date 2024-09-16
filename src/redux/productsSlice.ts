@@ -68,8 +68,10 @@ const productsSlice = createSlice({
     setCartCounter(state, action: PayloadAction<number>) {
       state.cartCounter = action.payload;
     },
-    removeFromLocalCart(state, action: PayloadAction<number>) {
-      state.cart = state.cart.filter((el) => el.product.id !== action.payload);
+    removeFromLocalCart(state, action: PayloadAction<{ id: number; size: number | null }>) {
+      state.cart = state.cart.filter(
+        (el) => el.product.id !== action.payload.id || el.product.size !== action.payload.size
+      );
     },
     setOrder(state, action: PayloadAction<IOrder>) {
       state.orders.push(action.payload);

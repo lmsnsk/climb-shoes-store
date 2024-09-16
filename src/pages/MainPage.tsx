@@ -52,7 +52,7 @@ const MainPage: FC<IMainPage> = ({ setProductId }) => {
             products.forEach((el1) => {
               if (el1.id === el.productId) prod = el1;
             });
-            return { owner: el.owner, count: el.count, product: prod };
+            return { owner: el.owner, count: el.count, product: { ...prod, size: el.size } };
           });
           dispatch(setCart(localCart));
           dispatch(setCartCounter(cartCounter));

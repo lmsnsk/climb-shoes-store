@@ -30,13 +30,14 @@ const ProductCard: FC<IProductCard> = ({ el, isCart, count, setProductId }) => {
       const response = await removeFromCart(`cart`, {
         id: product.id,
         owner: auth?.id,
+        size: product.size,
       });
       if (response?.ok) {
         let currentCount = 0;
         cart.forEach((el) => {
           if (el.owner === auth.id && el.product.id === product.id) currentCount = el.count;
         });
-        dispatch(removeFromLocalCart(product.id));
+        dispatch(removeFromLocalCart({ id: product.id, size: product.size }));
         dispatch(setCartCounter(cartCounter - currentCount));
       }
     }

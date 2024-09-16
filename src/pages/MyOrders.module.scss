@@ -31,6 +31,7 @@
   .orderBox {
     display: flex;
     min-height: 200px;
+    width: 600px;
     box-shadow: 0 0 5px rgb(145, 145, 145);
     border-radius: 15px;
     padding: 30px;
@@ -42,6 +43,10 @@
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
+
+      & > div {
+        max-width: 250px;
+      }
 
       img {
         width: 150px;
@@ -94,6 +99,11 @@
       .productsBox {
         gap: 30px;
         margin: 0 auto;
+
+        & > div {
+          max-width: none;
+          margin: 0 auto;
+        }
 
         img {
           width: 150px;

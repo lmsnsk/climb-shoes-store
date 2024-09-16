@@ -54,9 +54,9 @@ class UserService {
   }
 
   async createCartElement(element) {
-    const { owner, productId, count } = element;
+    const { owner, productId, count, size } = element;
     try {
-      return await Cart.create({ owner, productId, count });
+      return await Cart.create({ owner, productId, count, size });
     } catch (error) {
       console.log(error);
       throw new Error(`User creation failed: ${error}`);
@@ -77,13 +77,13 @@ class UserService {
     }
   }
 
-  async removeCartElement({ id, owner }) {
+  async removeCartElement({ id, owner, size }) {
     try {
       const cartElement = await Cart.findOne({
-        where: { productId: id, owner: owner },
+        where: { productId: id, owner: owner, size: size },
       });
       await Cart.destroy({
-        where: { productId: id, owner: owner },
+        where: { productId: id, owner: owner, size: size },
       });
       return cartElement.count;
     } catch (error) {

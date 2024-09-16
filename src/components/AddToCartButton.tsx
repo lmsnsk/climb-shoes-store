@@ -24,6 +24,7 @@ const AddToCartButton: FC<IAddToCartButton> = ({ el, btnTitle, style }) => {
       navigate("/login");
       return;
     }
+
     if (el.isSizeNeed && !el.size) return;
 
     let cartCounter = 0;
@@ -50,6 +51,7 @@ const AddToCartButton: FC<IAddToCartButton> = ({ el, btnTitle, style }) => {
       });
       if (check) {
         dispatch(setCart(newCart));
+        console.log({ id: product.id, size: product.size, count: count, owner: auth.id });
         updateMyCart("cart", { id: product.id, size: product.size, count: count, owner: auth.id });
       } else {
         newCart.push({ product: product, owner: auth.id, count: 1 });

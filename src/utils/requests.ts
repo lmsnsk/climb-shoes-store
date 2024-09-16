@@ -55,7 +55,10 @@ export const addToMyCart = async (pathname: string, sendData: ICartElementSever)
   }
 };
 
-export const removeFromCart = async (pathname: string, sendData: { id: number; owner: number }) => {
+export const removeFromCart = async (
+  pathname: string,
+  sendData: { id: number; owner: number; size: number | null }
+) => {
   try {
     const response = await fetch(APIPATH + pathname, {
       ...OPTIONS,
