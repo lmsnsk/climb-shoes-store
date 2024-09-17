@@ -1,6 +1,7 @@
 import { ICartElementSever, Inputs, IOrderServer } from "./types";
 
-const APIPATH = "http://localhost:3333/api/v1/";
+// const APIPATH = "http://localhost:3333/api/v1/";
+const APIPATH = "/api/v1/";
 
 const OPTIONS: RequestInit = {
   method: "GET",
